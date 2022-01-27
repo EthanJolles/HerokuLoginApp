@@ -3,6 +3,7 @@ package com.solvd.socialNetwork.dao.jdbcMySQLImpl;
 import com.solvd.socialNetwork.dao.interfaces.IUserDao;
 import com.solvd.socialNetwork.model.user.User;
 import com.solvd.socialNetwork.utils.ConnectionPool;
+import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
 

@@ -3,6 +3,7 @@ package com.solvd.socialNetwork;
 import com.solvd.socialNetwork.dao.jdbcMySQLImpl.UserDaoImpl;
 import com.solvd.socialNetwork.model.order.Product;
 import com.solvd.socialNetwork.model.user.User;
+import com.solvd.socialNetwork.service.UserService;
 import com.solvd.socialNetwork.utils.Deadlock;
 import com.solvd.socialNetwork.utils.Jackson;
 import com.solvd.socialNetwork.utils.JaxBHandler;

@@ -3,15 +3,19 @@ package com.solvd.socialNetwork.service;
 import com.solvd.socialNetwork.utils.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
+@Service
 public class UserService extends AbstractService  {
 
     private static final Logger LOGGER = LogManager.getLogger(UserService.class);
 
+    private static final String GET_USER_COUNT = "SELECT COUNT(*) AS rowcount FROM user";
     private static final String GET_USER_BY_LOGIN = "Select * from user where username=? and password=?";
     private static final String GET_USER_BY_USERNAME = "Select * from user where username=?";
 
