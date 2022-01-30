@@ -37,7 +37,7 @@ public class BillingAddressDaoImpl extends AbstractDao<BillingAddress> implement
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -59,7 +59,7 @@ public class BillingAddressDaoImpl extends AbstractDao<BillingAddress> implement
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return billingAddress;
@@ -97,7 +97,7 @@ public class BillingAddressDaoImpl extends AbstractDao<BillingAddress> implement
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -115,7 +115,7 @@ public class BillingAddressDaoImpl extends AbstractDao<BillingAddress> implement
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

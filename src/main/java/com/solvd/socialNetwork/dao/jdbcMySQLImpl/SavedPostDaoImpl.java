@@ -33,7 +33,7 @@ public class SavedPostDaoImpl extends AbstractDao<SavedPost> implements ISavedPo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -56,7 +56,7 @@ public class SavedPostDaoImpl extends AbstractDao<SavedPost> implements ISavedPo
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return savedPost;

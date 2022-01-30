@@ -33,7 +33,7 @@ public class RepostDaoImpl extends AbstractDao<Repost> implements IRepostDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -56,7 +56,7 @@ public class RepostDaoImpl extends AbstractDao<Repost> implements IRepostDao {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return repost;
@@ -90,7 +90,7 @@ public class RepostDaoImpl extends AbstractDao<Repost> implements IRepostDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -108,7 +108,7 @@ public class RepostDaoImpl extends AbstractDao<Repost> implements IRepostDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

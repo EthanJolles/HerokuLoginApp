@@ -35,7 +35,7 @@ public class BlockedListDaoImpl extends AbstractDao<BlockedList> implements IBlo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -57,7 +57,7 @@ public class BlockedListDaoImpl extends AbstractDao<BlockedList> implements IBlo
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return blockedList;
@@ -90,7 +90,7 @@ public class BlockedListDaoImpl extends AbstractDao<BlockedList> implements IBlo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -108,7 +108,7 @@ public class BlockedListDaoImpl extends AbstractDao<BlockedList> implements IBlo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

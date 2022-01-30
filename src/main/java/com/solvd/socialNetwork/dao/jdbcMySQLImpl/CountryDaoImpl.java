@@ -55,7 +55,7 @@ public class CountryDaoImpl extends AbstractDao<Country> implements ICountryDao 
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return country;
@@ -87,7 +87,7 @@ public class CountryDaoImpl extends AbstractDao<Country> implements ICountryDao 
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -105,7 +105,7 @@ public class CountryDaoImpl extends AbstractDao<Country> implements ICountryDao 
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

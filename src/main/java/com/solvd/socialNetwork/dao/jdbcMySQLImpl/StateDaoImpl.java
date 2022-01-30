@@ -32,7 +32,7 @@ public class StateDaoImpl extends AbstractDao<State> implements IStateDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -54,7 +54,7 @@ public class StateDaoImpl extends AbstractDao<State> implements IStateDao {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return state;
@@ -88,7 +88,7 @@ public class StateDaoImpl extends AbstractDao<State> implements IStateDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -106,7 +106,7 @@ public class StateDaoImpl extends AbstractDao<State> implements IStateDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

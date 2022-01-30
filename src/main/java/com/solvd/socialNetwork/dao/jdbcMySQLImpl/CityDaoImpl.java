@@ -34,7 +34,7 @@ public class CityDaoImpl extends AbstractDao<City> implements ICityDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -56,7 +56,7 @@ public class CityDaoImpl extends AbstractDao<City> implements ICityDao {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return city;
@@ -90,7 +90,7 @@ public class CityDaoImpl extends AbstractDao<City> implements ICityDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -108,7 +108,7 @@ public class CityDaoImpl extends AbstractDao<City> implements ICityDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

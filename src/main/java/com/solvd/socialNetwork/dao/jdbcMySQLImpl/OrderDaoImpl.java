@@ -34,7 +34,7 @@ public class OrderDaoImpl extends AbstractDao<Order> implements IOrderDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -56,7 +56,7 @@ public class OrderDaoImpl extends AbstractDao<Order> implements IOrderDao {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return order;
@@ -89,7 +89,7 @@ public class OrderDaoImpl extends AbstractDao<Order> implements IOrderDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -107,7 +107,7 @@ public class OrderDaoImpl extends AbstractDao<Order> implements IOrderDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

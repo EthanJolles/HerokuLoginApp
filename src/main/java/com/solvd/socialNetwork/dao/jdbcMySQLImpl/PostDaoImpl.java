@@ -59,7 +59,7 @@ public class PostDaoImpl extends AbstractDao<Post> implements IPostDao {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return post;
@@ -94,7 +94,7 @@ public class PostDaoImpl extends AbstractDao<Post> implements IPostDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -112,7 +112,7 @@ public class PostDaoImpl extends AbstractDao<Post> implements IPostDao {
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

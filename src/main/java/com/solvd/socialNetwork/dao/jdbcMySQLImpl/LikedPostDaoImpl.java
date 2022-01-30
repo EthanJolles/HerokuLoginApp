@@ -34,7 +34,7 @@ public class LikedPostDaoImpl extends AbstractDao<LikedPost> implements ILikedPo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -57,7 +57,7 @@ public class LikedPostDaoImpl extends AbstractDao<LikedPost> implements ILikedPo
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return likedPost;
@@ -91,7 +91,7 @@ public class LikedPostDaoImpl extends AbstractDao<LikedPost> implements ILikedPo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -109,7 +109,7 @@ public class LikedPostDaoImpl extends AbstractDao<LikedPost> implements ILikedPo
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

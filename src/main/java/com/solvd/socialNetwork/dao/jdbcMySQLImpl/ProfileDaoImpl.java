@@ -62,7 +62,7 @@ public class ProfileDaoImpl extends AbstractDao<Profile> implements IProfileDao 
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return profile;
@@ -108,7 +108,7 @@ public class ProfileDaoImpl extends AbstractDao<Profile> implements IProfileDao 
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -126,7 +126,7 @@ public class ProfileDaoImpl extends AbstractDao<Profile> implements IProfileDao 
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

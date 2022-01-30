@@ -34,7 +34,7 @@ public class FriendListDaoImpl extends AbstractDao<FriendList> implements IFrien
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -56,7 +56,7 @@ public class FriendListDaoImpl extends AbstractDao<FriendList> implements IFrien
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return friendList;
@@ -89,7 +89,7 @@ public class FriendListDaoImpl extends AbstractDao<FriendList> implements IFrien
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -107,7 +107,7 @@ public class FriendListDaoImpl extends AbstractDao<FriendList> implements IFrien
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

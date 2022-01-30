@@ -61,7 +61,7 @@ public class ProductDaoImpl extends AbstractDao<Product> implements IProductDao 
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return product;
@@ -99,7 +99,7 @@ public class ProductDaoImpl extends AbstractDao<Product> implements IProductDao 
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -117,7 +117,7 @@ public class ProductDaoImpl extends AbstractDao<Product> implements IProductDao 
             LOGGER.error(e);
         } finally {
             closeResource.close(statement);
-            closeResource.close(connection);
+            
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
