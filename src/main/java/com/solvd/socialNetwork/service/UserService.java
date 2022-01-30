@@ -19,6 +19,27 @@ public class UserService extends AbstractService  {
     private static final String GET_USER_BY_LOGIN = "Select * from user where username=? and password=?";
     private static final String GET_USER_BY_USERNAME = "Select * from user where username=?";
 
+    public long countUser() {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        long userCount = 0L;
+        try {
+            connection = ConnectionPool.getConnectionPool().getConnection();
+            statement = connection.prepareStatement(GET_USER_COUNT);
+            resultSet = statement.executeQuery();
+            resultSet.next();
+            userCount = resultSet.getLong("rowcount");
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            ConnectionPool.getConnectionPool().releaseConnection(connection);
+        }
+        return userCount;
+    }
+
     public boolean validateUniqueUser(String username) {
         boolean isUnique = false;
         Connection connection = null;
@@ -37,7 +58,6 @@ public class UserService extends AbstractService  {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return isUnique;
@@ -60,7 +80,6 @@ public class UserService extends AbstractService  {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return isValid;
