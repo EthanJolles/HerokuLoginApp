@@ -24,6 +24,7 @@ public class HomeController {
     @GetMapping("/")
     public String homepage(Model model) {
         model.addAttribute("loginController", "Status");
+        model.addAttribute("userCount", userService.countUser());
         return "index";
     }
 
@@ -31,9 +32,11 @@ public class HomeController {
     public String handleLogin(@RequestParam("username") String user, @RequestParam("password") String password, Model model) {
         if (userService.validateUser(user, password)) {
             model.addAttribute("loginController", "Successful login!");
+            model.addAttribute("userCount", userService.countUser());
             return "index";
         }
         model.addAttribute("loginController", "Failed login!");
+        model.addAttribute("userCount", userService.countUser());
         return "index";
     }
 
@@ -49,9 +52,11 @@ public class HomeController {
                 LOGGER.error(e);
             }
             model.addAttribute("loginController", "Account successfully created");
+            model.addAttribute("userCount", userService.countUser());
             return "index";
         }
         model.addAttribute("loginController", "Please choose a unique username");
+        model.addAttribute("userCount", userService.countUser());
         return "index";
     }
 }
