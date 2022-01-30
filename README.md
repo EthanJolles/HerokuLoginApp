@@ -1,4 +1,4 @@
-# SocialNetwork
+# HerokuLoginApp
 
 I think Im done adding functionality, and depending on when you're looking at this it may no longer be functional as it's hooked up to my internship demo database that I am not hosting myself. 
 
